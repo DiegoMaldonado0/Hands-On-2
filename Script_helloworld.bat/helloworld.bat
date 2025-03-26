@@ -1,20 +1,26 @@
 @echo off
-REM Este comando evita que se muestren los demás comandos en pantalla.
+REM Este comando evita que se muestren los demás comandos en pantalla
 
 echo Hello World
-REM "echo" imprime el texto en la consola.
+REM Se imprime Hello World en pantalla
 
 dir
-REM "dir" lista los archivos y directorios en la ubicación actual.
+REM Se enlista el contenido del directorio actual
 
-mkdir Test
-REM "mkdir" crea un directorio llamado "Test".
+REM Verifica si el directorio Test ya existe
+if exist Test (
+    echo El directorio Test ya existe.
+) else (
+    mkdir Test
+    echo Directorio Test creado.
+)
 
 cd Test
-REM "cd" cambia al directorio "Test".
+REM Se mueve al directorio Test
+
+echo Estas en el directorio: %cd%
 
 dir
-REM Lista el contenido de "Test" (Que debe comenzar estando vacío).
+REM Se enlista el contenido de Test
 
 pause
-REM Esto es para que la ventana no se cierre de forma automatica.
